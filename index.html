@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventER</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[url('/images/bg-small.jpg')] bg-cover bg-center bg-no-repeat h-screen">
+    <div class="wrapper bg-[rgba(0,0,0,0.7)] h-full">
+
+        <!-- Navbar -->
+        <nav class="bg-[rgba(0,0,0,0.5)] flex items-center justify-center py-1">
+            <img src="images/logo.png" alt="Logo" class="w-[3rem]">
+            <p class="text-3xl font-light text-cyan-100">event<span class="font-black">ER</span></p>
+        </nav>
+
+        <!-- Hero -->
+        <header class="text-white text-center lg:px-[10rem]">
+            <div class="header-wrapper px-1 flex flex-col mt-[5rem]">
+                <p class="text-cyan-100 text-[18px]">Book moments that matter.</p>
+                <p class="text-4xl md:text-5xl font-light mb-8">Find and book the best events around you ; fast, simple,
+                    and personalized.</p>
+
+                <!-- For small screens -->
+                <p class="text-2xl block md:hidden">
+                    From concerts and workshops to exclusive gatherings, eventER is here for you!
+                <p>
+
+                    <!-- For larg screens -->
+                <p class="text-2xl hidden md:block">
+                    From concerts and workshops to exclusive gatherings, eventER helps you discover, book, and get
+                    reminders for events that match your vibe and age group. Never miss another moment!
+                <p>
+                <button class="mt-20 text-3xl border border-cyan-100 px-10 py-5 rounded-md hover:bg-cyan-100 hover:text-gray-800">
+                    Browse Events >
+                </button>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>
