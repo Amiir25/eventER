@@ -1,5 +1,10 @@
 // Script for eventER website
 
+// Open events file
+document.querySelector('#browse-events-btn').addEventListener('click', function() {
+    window.location.href = './event.js';
+})
+
 // Display events
 function renderEvents() {
     const eventsList = document.querySelector('.events-list');
