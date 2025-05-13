@@ -28,8 +28,6 @@ function showEventDetails(id) {
     const clickedEvent = events.find(event => event.id === id);
     if (!clickedEvent) return;
 
-    // Image
-    document.querySelector('#event-image').setAttribute('src', `${clickedEvent.image}`);
     // Title
     document.querySelector('#event-title').textContent = clickedEvent.title;
     // Description
@@ -42,22 +40,30 @@ function showEventDetails(id) {
     document.querySelector('#event-address').textContent = clickedEvent.address;
     // Price
     document.querySelector('#event-price').textContent = clickedEvent.price;
-    // Spots
-    document.querySelector('#event-spots').textContent = clickedEvent.spots;
+    // Available Spots
+    checkAvailableSpots(clickedEvent);
     // Reamining Days
     checkRemainingDays(clickedEvent);
-    // Age Color
+    // Age
     checkAge(clickedEvent);
 
     // Event detail
-    document.querySelector('#event-detail').classList.remove('hidden');
+    let bgImage = `background-image: url('${clickedEvent.image}');`;
+    document.querySelector('#event-detail').setAttribute('style', `${bgImage}`);
+    document.querySelector('#event-detail').classList.add('bg-cover', 'bg-center');
+    document.querySelector('#event-detail').classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+    document.querySelector('#event-detail').classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+    document.querySelector('#overlay').classList.remove('hidden');
 }
+
+// Color customisation
+let remainingDaysColor = ''; // Color for remaining days
+let ageColor = ''; // Color for age
+let availableSpots = ''; // Color for available spots
 
 // Check remaining days to customise text and color
 function checkRemainingDays(clickedEvent) {
-
     let remainingDays = '';
-    let colorValue = '';
 
     // Remaining days
     if (clickedEvent.remainingdays === 0) {
@@ -79,29 +85,89 @@ function checkRemainingDays(clickedEvent) {
 
     // Color
     if (clickedEvent.remainingdays === 0 || clickedEvent.remainingdays === 1) {
-        colorValue = 'text-red-500';
+        remainingDaysColor = 'text-red-500';
     } else if (clickedEvent.remainingdays >= 2 && clickedEvent.remainingdays <= 6) {
-        colorValue = 'text-yellow-500';
+        remainingDaysColor = 'text-yellow-400';
     } else if (clickedEvent.remainingdays >= 7) {
-        colorValue = 'text-green-500';
+        remainingDaysColor = 'text-green-400';
     }
 
     document.querySelector('#event-remaining-days').textContent = remainingDays;
-    document.querySelector('#event-remaining-days').classList.add(`${colorValue}`);
+    document.querySelector('#event-remaining-days').classList.add(`${remainingDaysColor}`);
 }
 
 // Check Age to customise color
 function checkAge(clickedEvent) {
-    let ageColor = '';
-
     if (clickedEvent.age >= 0 && clickedEvent.age <= 10) {
-        ageColor = 'text-green-500';
+        ageColor = 'text-green-400';
     } else if (clickedEvent.age >= 11 && clickedEvent.age <= 17) {
-        ageColor = 'text-yellow-500';
+        ageColor = 'text-yellow-400';
     } else if (clickedEvent.age >= 18) {
         ageColor = 'text-red-500';
     }
 
-    document.querySelector('#event-age').textContent = `${clickedEvent.age}+`;
+    if (clickedEvent.age === 0) {
+        document.querySelector('#event-age').textContent = 'All';
+    } else {
+        document.querySelector('#event-age').textContent = `${clickedEvent.age}+`;
+    }
+
     document.querySelector('#event-age').classList.add(`${ageColor}`);
 }
+
+// Check available spots and customise color
+function checkAvailableSpots(clickedEvent) {
+    if (clickedEvent.spots >= 50) {
+        availableSpots = 'text-green-400';
+    } else if (clickedEvent.spots >= 11 && clickedEvent.spots <= 49) {
+        availableSpots = 'text-yellow-400';
+    } else if (clickedEvent.spots >= 0 && clickedEvent.spots <= 10) {
+        availableSpots = 'text-red-500';
+    }
+
+    document.querySelector('#event-spots').textContent = clickedEvent.spots;
+    document.querySelector('#event-spots').classList.add(`${availableSpots}`);
+    if (clickedEvent.spotplus) {
+        document.querySelector('#event-spots-plus').textContent = clickedEvent.spotplus;
+    }
+}
+
+// Close event detail
+function closeEventDetail() {
+    // Close event detail by icon
+    document.querySelector('#close-event-detail').addEventListener('click', function () {
+        document.querySelector('#event-detail').classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+        document.querySelector('#event-detail').classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        document.querySelector('#overlay').classList.add('hidden');
+
+        // Remove custome colors from remaining days
+        document.querySelector('#event-remaining-days').classList.remove(`${remainingDaysColor}`);
+        // Remove custome colors from ages
+        document.querySelector('#event-age').classList.remove(`${ageColor}`);
+        // Remove custome colors from available spots
+        document.querySelector('#event-spots').classList.remove(`${availableSpots}`);
+        // Free up the event-spots-plus section
+        document.querySelector('#event-spots-plus').textContent = '';
+
+
+
+    })
+
+    // Close event detail by overlay
+    document.querySelector('#overlay').addEventListener('click', function () {
+        document.querySelector('#event-detail').classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+        document.querySelector('#event-detail').classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        document.querySelector('#overlay').classList.add('hidden');
+
+        // Remove custome colors from remaining days
+        document.querySelector('#event-remaining-days').classList.remove(`${remainingDaysColor}`);
+        // Remove custome colors from ages
+        document.querySelector('#event-age').classList.remove(`${ageColor}`);
+        // Remove custome colors from available spots
+        document.querySelector('#event-spots').classList.remove(`${availableSpots}`);
+        // Free up the event-spots-plus section
+        document.querySelector('#event-spots-plus').textContent = '';
+    })
+}
+
+closeEventDetail();
