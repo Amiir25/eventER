@@ -2,7 +2,7 @@
 
 // Open events file
 document.querySelector('#browse-events-btn').addEventListener('click', function() {
-    window.location.href = './event.js';
+    window.location.href = './events.html';
 })
 
 // Display events
