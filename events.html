@@ -17,22 +17,28 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="bg-[rgba(0,0,0,0.8)] flex items-center justify-center py-1">
-            <img src="img/logo.png" alt="Logo" class="w-[3rem]">
+            <img src="img/logo.webp" alt="Logo" class="w-[3rem]">
             <p class="text-3xl font-light text-cyan-100">event<span class="font-black">ER</span></p>
         </nav>
 
         <!-- Events List -->
-        <div class="events-list grid md:grid-cols-2 lg: grid-cols-3 relative">
+        <div class="events-list flex flex-col md:flex-row flex-wrap relative">
 
             <!-- Events detail -->
-            <div id="event-detail" class="max-w-xs md:max-w-lg rounded shadow-2xl bg-cyan-100 mt-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden">
-                <img id="event-image" class="w-full" src="" alt="">
-                <div class="px-6 py-4">
+            <div id="overlay" class="min-w-[100vw] min-h-[100vh] bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 hidden"></div>
+            <div id="event-detail" class="w-full max-w-sm md:max-w-xl text-cyan-100 rounded-md shadow-2xl
+                    fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
+                    opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-out backdrop-blur-50">
+                <div class="px-3 md:px-8 md:py-[5rem] bg-[rgba(0,0,0,0.8)] h-full overflow-y-auto">
+                    <!-- Close icon -->
+                    <p id="close-event-detail" class="text-2xl text-right mb-5 hover:text-cyan-200">
+                        <i class="fa-solid fa-square-xmark"></i>
+                    </p>
                     <!-- Title -->
-                    <div id="event-title" class="font-bold text-xl mb-2"></div>
+                    <div id="event-title" class="font-bold md:text-5xl mb-2"></div>
                     <!-- Description -->
-                    <p id="event-description" class="text-gray-700 text-base"></p>
-                    <div class="py-4">
+                    <p id="event-description" class="text-gray-300 md:text-2xl"></p>
+                    <div class="py-8">
                         <!-- Date -->
                         <p class="mb-2">
                             <i class="fa-solid fa-clock pr-2"></i>
@@ -52,7 +58,8 @@
                         <!-- Available Spots -->
                         <p class="mb-2">
                             <span class="mr-2">👥</span>
-                            <span id="event-spots"></span>
+                            <span id="event-spots" class="font-semibold"></span>
+                            <span id="event-spots-plus" class="ml-3"></span>
                         </p>
                         <!-- Age -->
                         <p class="mb-2">
@@ -60,14 +67,14 @@
                             <span id="event-age" class="font-semibold"></span>
                         </p>
                     </div>
+                    <!-- Book Now -->
+                    <p class="text-center">
+                        <button
+                            class="book-now mb-2 text-lg border border-gray-500 px-10 py-3 rounded-md hover:bg-cyan-100 hover:text-gray-800">
+                            Book Now
+                        </button>
+                    </p>
                 </div>
-                <!-- Book Now -->
-                <p class="text-center">
-                    <button
-                        class="book-now mb-2 text-lg border border-gray-500 px-10 py-3 rounded-md hover:bg-cyan-100 hover:text-gray-800">
-                        Book Now
-                    </button>
-                </p>
             </div> <!-- events-detail -->
         </div> <!-- event-list -->
 
@@ -86,6 +93,9 @@
 
 
     </div> <!-- wrapper -->
+    <footer class="bg-[rgba(0,0,0,0.8)] text-center py-2 mt-5">
+        <p class="text-gray-200">&copy; 2025 <span class="font-light text-cyan-100">event<span class="font-black">ER</span></span></p>
+    </footer>
 
 
     <script src="events.js"></script>
