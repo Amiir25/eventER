@@ -363,7 +363,6 @@ const events = [
         "age": 21,
         "image": "./img/parenting-workshop.webp"
     },
-    // More events...
 ];
 
 
