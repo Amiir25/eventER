@@ -70,6 +70,10 @@ function checkRemainingDays(clickedEvent) {
         remainingDays = 'Today'
     } else if (clickedEvent.remainingdays === 1) {
         remainingDays = 'Tomorrow';
+    } else if (clickedEvent.remainingdays === 2) {
+        remainingDays = 'In 2 days';
+    } else if (clickedEvent.remainingdays === 3) {
+        remainingDays = 'In 3 days';
     } else if (clickedEvent.remainingdays >= 2 && clickedEvent.remainingdays <= 6) {
         remainingDays = 'This week';
     } else if (clickedEvent.remainingdays >= 7 && clickedEvent.remainingdays <= 13) {
