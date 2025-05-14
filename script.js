@@ -88,11 +88,11 @@ function checkRemainingDays(clickedEvent) {
 
 
     // Color
-    if (clickedEvent.remainingdays === 0 || clickedEvent.remainingdays === 1) {
+    if (clickedEvent.remainingdays >= 0 && clickedEvent.remainingdays <= 3) {
         remainingDaysColor = 'text-red-500';
-    } else if (clickedEvent.remainingdays >= 2 && clickedEvent.remainingdays <= 6) {
+    } else if (clickedEvent.remainingdays >= 4 && clickedEvent.remainingdays <= 13) {
         remainingDaysColor = 'text-yellow-400';
-    } else if (clickedEvent.remainingdays >= 7) {
+    } else if (clickedEvent.remainingdays >= 14) {
         remainingDaysColor = 'text-green-400';
     }
 
