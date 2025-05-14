@@ -1,3 +1,5 @@
+// List of events for eventER website
+
 const events = [
     {
         "id": 1,
