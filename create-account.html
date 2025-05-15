@@ -40,7 +40,8 @@
                 <p class="text-3xl md:text-5xl font-bold mb-2">
                     Create account first
                 </p>
-                <form class="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <form id="create-account"
+                    class="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
                     <!-- First Name -->
                     <div class="mb-4">
@@ -49,7 +50,7 @@
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="username" type="text" name="first-name" placeholder="Enter your first name">
+                            id="first-name" type="text" name="first-name" placeholder="Enter your first name">
                         <p id="first-name-error" class="text-red-500 text-xs italic hidden"></p>
                     </div>
 
@@ -77,13 +78,13 @@
 
                     <!-- Phone Number -->
                     <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="phone-no">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
                             Phone Number
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none"
-                            id="phone-no" type="tel" name="phone-number" placeholder="Enter your phone number">
-                        <p id="phone-no-error" class="text-red-500 text-xs italic hidden"></p>
+                            id="phone" type="tel" name="phone-number" placeholder="Enter your phone number">
+                        <p id="phone-error" class="text-red-500 text-xs italic hidden"></p>
                     </div>
 
                     <!-- Country -->
@@ -158,22 +159,24 @@
                     <div class="text-center mt-6">
                         <button
                             class="text-gray-700font-bold py-2 px-4 border rounded hover:bg-cyan-200 hover:border-cyan-200"
-                            type="button">
-                            Sign In
+                            id="submit-btn" type="submit">
+                            Submit
                         </button>
                     </div>
                 </form>
 
             </div><!-- create-account -->
 
-            <div id="book-event"></div>
-
             <!-- Footer Message -->
-            <p class="text-center text-gray-700 text-sm absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            <p class="text-center text-gray-700 text-xs absolute bottom-4 left-1/2 transform -translate-x-1/2">
                 &copy;2025 eventER. All rights reserved.
             </p>
         </div> <!-- from-wrapper -->
     </div> <!-- wrapper -->
+
+    <!-- https://www.upwork.com/jobs/~021922635711714623190 -->
+
+    <script src="create-account.js"></script>
 </body>
 
 </html>
