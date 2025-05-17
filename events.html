@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="bg-[rgba(0,0,0,0.8)] flex items-center justify-center py-1">
-            <img src="img/logo.webp" alt="Logo" class="w-[3rem]">
-            <p class="text-3xl font-light text-cyan-100">event<span class="font-black">ER</span></p>
+        <nav class="bg-[rgba(0,0,0,0.8)] py-1">
+            <a href="./index.html" class="flex items-center justify-center">
+                <img src="img/logo.webp" alt="Logo" class="w-[3rem]">
+                <p class="text-3xl font-light text-cyan-100">event<span class="font-black">ER</span></p>
+            </a>
         </nav>
 
         <!-- Events List -->
@@ -69,8 +72,7 @@
                     </div>
                     <!-- Book Now -->
                     <p class="text-center">
-                        <button
-                            id="book-now"
+                        <button id="book-now"
                             class="b-2 text-lg border border-gray-500 px-10 py-3 rounded-md hover:bg-cyan-100 hover:text-gray-800">
                             Book Now
                         </button>
