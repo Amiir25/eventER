@@ -5,7 +5,7 @@ function renderEvents() {
     const eventsList = document.querySelector('.events-list');
     events.forEach(event => {
         const eventCard = document.createElement('div');
-        eventCard.setAttribute('class', 'max-w-xs md:max-w-sm rounded overflow-hidden shadow-2xl m-auto mt-5 bg-cyan-100')
+        eventCard.setAttribute('class', 'event max-w-xs md:max-w-sm rounded overflow-hidden shadow-2xl m-auto mt-5 bg-cyan-100')
         eventCard.innerHTML = `
         <img src="${event.image}" alt="${event.title}" class="w-full"/>
         <div class="px-6 py-4">
@@ -177,6 +177,6 @@ function closeEventDetail() {
 closeEventDetail();
 
 // Book Now button
-document.querySelector('#book-now').addEventListener('click', function() {
+document.querySelector('#book-now').addEventListener('click', function () {
     window.location.href = './create-account.html';
 })
