@@ -4,8 +4,28 @@
 document.querySelector('#create-account').addEventListener('submit', function (event) {
     event.preventDefault();
     if (validateForm()) {
-        FullName = `${userFirstName} ${userLastName}`;
-        alert(FullName)
+        // Fill user details
+        // Full name
+        document.querySelector('#user-full-name').textContent = `${userFirstName} ${userLastName}`;
+        // Email
+        document.querySelector('#user-email').textContent = userEmail;
+        // Phone
+        document.querySelector('#user-phone').textContent = userPhoneNumber;
+        // Address
+        document.querySelector('#user-address').textContent = `${userCity}, Ethiopia`;
+        // Age
+        document.querySelector('#user-age').textContent = userAge;
+        // Gender
+        document.querySelector('#user-gender').textContent = userGender;
+
+        // Show user detail section for 5 seconds
+        document.querySelector('#create-account').classList.remove('slide-in');
+        document.querySelector('#create-account').classList.add('slide-out');
+        document.querySelector('#user-detail-wrapper').classList.add('slide-in');
+        setTimeout(() => {
+            window.location.href = './events.html';
+        }, 5000);
+
     }
 })
 
@@ -192,7 +212,7 @@ function checkDOB() {
     if (monthDiff < 0 || (monthDiff === 0 && dateDiff < 0)) {
         age--;
     }
-    
+
     userAge = age;
     validFormElement(DOB, DOBError);
     return true;
@@ -227,7 +247,7 @@ function checkPassword() {
         errorMessage = 'Enter a password';
         invalidFormElement(password, passwordError, errorMessage);
         return false;
-    } 
+    }
 
     const regExp = /^[A-Za-z0-9@$#!%*?&]{4,20}$/;
 
@@ -270,7 +290,7 @@ function checkConfirmPassword() {
 function validFormElement(formElement, formElementError) {
     formElement.classList.remove('border-red-500');
     formElement.classList.add('border-green-500');
-    formElementError.classList.add('hidden') ;
+    formElementError.classList.add('hidden');
 }
 
 // Invalid Form Element
