@@ -1,3 +1,20 @@
+/* Scroll animation on events */
+@keyframes apear {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }  
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.event {
+    animation: apear 5s linear;
+    animation-timeline: view(); /* Makes the animation happen only when the particular element is visible */
+    animation-range: entry 0 cover 40%; /* Makes the animation start after the element enters and reaches 40% of the viewport */
+}
+
 /* Create account */
 /* Hide scrollbar but allow scrolling */
 #create-account::-webkit-scrollbar {
