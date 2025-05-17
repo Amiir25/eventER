@@ -175,3 +175,8 @@ function closeEventDetail() {
 }
 
 closeEventDetail();
+
+// Book Now button
+document.querySelector('#book-now').addEventListener('click', function() {
+    window.location.href = './create-account.html';
+})
