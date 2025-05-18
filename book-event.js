@@ -3,7 +3,8 @@ function showSelectedEvent(eventId) {
     if (!selectedEvent) return;
 
     alert(selectedEvent.title);
-    document.querySelector('#selected-event-title').textContent = 'Event Title';
+    let selectedEventTitle = document.querySelector('#selected-event-title').getAttribute('id');
+    alert(selectedEventTitle);
 }
 // document.querySelector('#selected-event-title').textContent = 'Event Title';
 
