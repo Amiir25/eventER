@@ -28,7 +28,7 @@
         <div class="events-list flex flex-col md:flex-row flex-wrap relative">
 
             <!-- Events detail -->
-            <div id="overlay" class="min-w-[100vw] min-h-[100vh] bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 hidden"></div>
+            <div id="overlay" class="min-w-[100vw] min-h-[100vh] bg-[rgba(0,0,0,0.7)] fixed top-0 left-0 z-10 hidden"></div>
             <div id="event-detail" class="w-full max-w-sm md:max-w-xl text-cyan-100 rounded-md shadow-2xl
                     fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
                     opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-out backdrop-blur-50">
@@ -91,6 +91,7 @@
 
     <script src="list-of-events.js"></script>
     <script src="events.js"></script>
+    <script src="book-event.js"></script>
 </body>
 
 </html>
