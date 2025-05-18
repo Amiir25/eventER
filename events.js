@@ -183,10 +183,9 @@ closeEventDetail();
 
 
 document.querySelector('#book-now').addEventListener('click', function () {
-    // Open booking form
-    window.location.href = './book-event.html';
+    // Save the Id of the selected event
+    sessionStorage.setItem('selectedEventId', selectedEventId);
 
-    // Call the function that displays the selected event on the form
-    showSelectedEvent(selectedEventId);
-    // alert(selectedEventId)
+    // Open the event booking form
+    window.location.href = './book-event.html';
 })
