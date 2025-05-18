@@ -1,4 +1,4 @@
-// Create account form validation
+// Form validation
 document.querySelector('#create-account-form').addEventListener('submit', function (event) {
     event.preventDefault();
     if (validateForm()) {
