@@ -1,6 +1,9 @@
 function showSelectedEvent(eventId) {
-    const selectedEvent = events.find(event => event.id === eventId);
+    let selectedEvent = events.find(event => event.id === eventId);
     if (!selectedEvent) return;
-    
-    document.querySelector('#selected-event-title').textContent = selectedEvent.title;
+
+    alert(selectedEvent.title);
+    document.querySelector('#selected-event-title').textContent = 'Event Title';
 }
+// document.querySelector('#selected-event-title').textContent = 'Event Title';
+
