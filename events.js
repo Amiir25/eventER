@@ -21,7 +21,6 @@ function renderEvents() {
         </div>
     `
         eventsList.appendChild(eventCard);
-        selectedEventId = event.id;
     });
 }
 
@@ -29,6 +28,9 @@ renderEvents();
 
 // Show event details
 function showEventDetails(id) {
+    // pick the Id of the event that the user selects
+    selectedEventId = id;
+
     const clickedEvent = events.find(event => event.id === id);
     if (!clickedEvent) return;
 
@@ -182,9 +184,9 @@ closeEventDetail();
 
 document.querySelector('#book-now').addEventListener('click', function () {
     // Open booking form
-    // window.location.href = './book-event.html';
+    window.location.href = './book-event.html';
 
-    // Call the function that shows the selected event on the form
-    // showSelectedEvent(selectedEventId);
-    alert(selectedEventId)
+    // Call the function that displays the selected event on the form
+    showSelectedEvent(selectedEventId);
+    // alert(selectedEventId)
 })
