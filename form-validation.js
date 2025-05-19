@@ -15,14 +15,21 @@ document.querySelector('#create-account-form').addEventListener('submit', functi
         document.querySelector('#user-age').textContent = userAge;
         // Gender
         document.querySelector('#user-gender').textContent = userGender;
+        // Reminder
+        if (reminderMethod) {
+            document.querySelector('#reminder').textContent = `We'll remind you for the event with ${reminderMethod}`;
+        }
 
         // Show user detail section for 5 seconds
-        document.querySelector('#create-account').classList.remove('slide-in');
-        document.querySelector('#create-account').classList.add('slide-out');
-        document.querySelector('#user-detail-wrapper').classList.add('slide-in');
+        setTimeout(() => {
+            document.querySelector('#create-account').classList.remove('slide-in');
+            document.querySelector('#create-account').classList.add('slide-out');
+            document.querySelector('#user-detail-wrapper').classList.add('slide-in');
+        }, 2000);
+        
         setTimeout(() => {
             window.location.href = './events.html';
-        }, 5000);
+        }, 8000);
 
     }
 })
@@ -30,14 +37,15 @@ document.querySelector('#create-account-form').addEventListener('submit', functi
 function validateForm() {
     return (
         checkFirstName() &&
-        checkLastName() //&&
-        // checkEmail() &&
-        // checkPhoneNumber() &&
-        // checkCity() &&
-        // checkDOB() &&
-        // checkGender() &&
-        // checkPassword() &&
-        // checkConfirmPassword()
+        checkLastName() &&
+        checkEmail() &&
+        checkPhoneNumber() &&
+        checkCity() &&
+        checkDOB() &&
+        checkGender() &&
+        checkPassword() &&
+        checkConfirmPassword() &&
+        reminder()
     );
 }
 
@@ -48,7 +56,8 @@ let userFirstName,
     userCity,
     userAge,
     userGender,
-    userPassword;
+    userPassword,
+    reminderMethod;
 
 // Check First Name
 function checkFirstName() {
@@ -189,9 +198,10 @@ function checkCity() {
 function checkDOB() {
     const DOB = document.querySelector('#dob');
     const DOBError = document.querySelector('#dob-error');
-    const errorMessage = 'Enter your date of birth';
+    let errorMessage = '';
 
     if (!DOB.value) {
+        errorMessage = 'Enter your date of birth'
         invalidFormElement(DOB, DOBError, errorMessage);
         return false;
     }
@@ -209,6 +219,14 @@ function checkDOB() {
     // If the user hasn't celebrate this year's birthday yet, subtract 1
     if (monthDiff < 0 || (monthDiff === 0 && dateDiff < 0)) {
         age--;
+    }
+
+    // Check if the user meet the age requirement
+    const eventAge = parseInt(sessionStorage.getItem('eventAge'), 10);
+    if (age < eventAge) {
+        errorMessage = `You must be at least ${eventAge} years old to book this event!`;
+        invalidFormElement(DOB, DOBError, errorMessage);
+        return false;
     }
 
     userAge = age;
@@ -282,6 +300,17 @@ function checkConfirmPassword() {
         invalidFormElement(confirmPassword, confirmPasswordError, errorMessage);
         return false;
     }
+}
+
+// Reminding method
+function reminder() {
+    const reminder = document.querySelector('input[name="reminder-method"]:checked');
+
+    if (reminder) {
+        reminderMethod = reminder.value
+    }
+
+    return true;
 }
 
 // Valid Form Element
