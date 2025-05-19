@@ -55,7 +55,9 @@
     <script>
         // Open events file when 'Browse Events' button is clicked
         document.querySelector('#browse-events-btn').addEventListener('click', function () {
-            window.location.href = './events.html';
+            setTimeout(() => {
+                window.location.href = './events.html';
+            }, 500)
         })
     </script>
 </body>
