@@ -20,16 +20,20 @@ document.querySelector('#create-account-form').addEventListener('submit', functi
             document.querySelector('#reminder').textContent = `We'll remind you for the event with ${reminderMethod}`;
         }
 
-        // Show user detail section for 5 seconds
+        // Add dark background on submit
+        document.querySelector('#create-account-wrapper').classList.add('bg-gray-300');
+        // Delay form submission for 2 seconds
         setTimeout(() => {
+            document.querySelector('#create-account-wrapper').classList.remove('bg-gray-300');
             document.querySelector('#create-account').classList.remove('slide-in');
             document.querySelector('#create-account').classList.add('slide-out');
             document.querySelector('#user-detail-wrapper').classList.add('slide-in');
         }, 2000);
-        
+
+        // Back to events page after 10 seconds
         setTimeout(() => {
             window.location.href = './events.html';
-        }, 8000);
+        }, 10000);
 
     }
 })
