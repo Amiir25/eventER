@@ -4,12 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
         let selectedEvent = events.find(event => event.id === eventId);
         if (!selectedEvent) return;
 
-        // let backGroundImage = `background-image: url('${clickedEvent.image}');`;
-        // document.querySelector('#selected-event').setAttribute('style', `${backGroundImage}`);
+        document.querySelector('#selected-event-wrapper').setAttribute('style', `background-image: url('${selectedEvent.image}');`);
+        document.querySelector('#selected-event-wrapper').classList.add('bg-cover', 'bg-center', 'bg-no-repeat');
         document.querySelector('#selected-event-title').textContent = selectedEvent.title;
         document.querySelector('#selected-event-date').textContent = selectedEvent.date;
         document.querySelector('#selected-event-price').textContent = selectedEvent.price;
-        document.querySelector('#selected-event-age').textContent = selectedEvent.age;
+
+        // Age
+        document.querySelector('#selected-event-age').textContent = `${selectedEvent.age}+`;
+        const ageColor = sessionStorage.getItem('ageColor');
+        document.querySelector('#selected-event-age').classList.add(`${ageColor}`);
+
     }
     const eventId = parseInt(sessionStorage.getItem('selectedEventId'), 10);
     showSelectedEvent(eventId);
