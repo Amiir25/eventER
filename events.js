@@ -123,6 +123,9 @@ function checkAge(clickedEvent) {
     }
 
     document.querySelector('#event-age').classList.add(`${ageColor}`);
+
+    // Save event age for the form page
+    sessionStorage.setItem('eventAge', clickedEvent.age);
 }
 
 // Check available spots and customise color
@@ -185,6 +188,9 @@ closeEventDetail();
 document.querySelector('#book-now').addEventListener('click', function () {
     // Save the Id of the selected event
     sessionStorage.setItem('selectedEventId', selectedEventId);
+    
+    // Save age color for the form page
+    sessionStorage.setItem('ageColor', ageColor);
 
     // Open the event booking form
     window.location.href = './book-event.html';
