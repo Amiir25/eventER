@@ -10,11 +10,11 @@ function renderEvents() {
         const eventCard = document.createElement('div');
         eventCard.setAttribute('class', 'event max-w-xs md:max-w-sm rounded overflow-hidden shadow-2xl m-auto mt-5 bg-cyan-100')
         eventCard.innerHTML = `
-        <img src="${event.image}" alt="${event.title}" class="w-full"/>
+        <img src="${event.image}" alt="${event.title}" class="w-full h-[265px]"/>
         <div class="px-6 py-4">
             <p class="event-title font-bold text-xl mb-2">${event.title}</p>
             <button
-                class="book-now mb-2 text-sm border border-gray-500 px-5 py-2 rounded-md hover:bg-cyan-200 hover:text-gray-800"
+                class="book-now mb-2 text-sm border border-gray-500 px-5 py-2 rounded-md hover:bg-gray-900 hover:text-gray-100"
                 onclick="showEventDetails(${event.id})">
                 Learn More
             </button>
