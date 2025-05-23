@@ -8,9 +8,9 @@ function renderEvents() {
     const eventsList = document.querySelector('.events-list');
     events.forEach(event => {
         const eventCard = document.createElement('div');
-        eventCard.setAttribute('class', 'event max-w-xs md:max-w-sm rounded overflow-hidden shadow-2xl m-auto mt-5 bg-cyan-100')
+        eventCard.setAttribute('class', 'event w-xs md:w-sm h-[350px] rounded overflow-hidden shadow-9xl m-auto mt-5 bg-cyan-100')
         eventCard.innerHTML = `
-        <img src="${event.image}" alt="${event.title}" class="w-full h-[265px]"/>
+        <img src="${event.image}" alt="${event.title}" class="w-full h-[220px]"/>
         <div class="px-6 py-4">
             <p class="event-title font-bold text-xl mb-2">${event.title}</p>
             <button
