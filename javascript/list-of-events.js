@@ -255,7 +255,7 @@ const events = [
     },
     {
         "id": 19,
-        "title": "Public Lecture: “The Future of AI in Africa",
+        "title": 'Public Lecture: “The Future of AI in Africa"',
         "description": " A thought-provoking lecture on how artificial intelligence can transform healthcare, education, and agriculture in Africa",
         "date": "May 12, 2025",
         "datetime": "2025-05-12",
