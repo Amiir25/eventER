@@ -1,3 +1,5 @@
+// A JavaScript code to add the selected event on form.html
+
 document.addEventListener('DOMContentLoaded', function () {
     // alert('On the door')
     function showSelectedEvent(eventId) {
