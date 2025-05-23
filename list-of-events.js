@@ -3,17 +3,17 @@
 const events = [
     {
         "id": 1,
-        "title": "Gaming & Esports Championship",
-        "description": "A competitive gaming event featuring tournaments, meet-ups, and tech showcases.",
-        "date": "May 18, 2025",
-        "datetime": "2025-05-18",
-        "remainingdays": 6,
-        "address": "Century Mall, Addis Ababa",
-        "price": "350 ETB",
+        "title": "Addis Tech Expo 2025",
+        "description": "Explore the latest in Ethiopian startups, smart technologies, and digital innovation.",
+        "date": "June 12, 2025",
+        "datetime": "2025-06-12",
+        "remainingdays": 30,
+        "address": "Millennium Hall, Bole, Addis Ababa",
+        "price": "250 ETB",
         "spots": 300,
-        "spotplus": "",
-        "age": 13,
-        "image": "./img/gaming-championship.webp"
+        "spotplus": '',
+        "age": 16,
+        "image": "./img/tech-expo.webp"
     },
     {
         "id": 2,
@@ -74,7 +74,7 @@ const events = [
     {
         "id": 6,
         "title": "DIY Home Decor Workshop",
-        "description": "Learn how to craft home decorations using recyclable materials and traditional Ethiopian crafts.",
+        "description": "Learn how to craft home decorations using recyclable materials and traditional Ethiopian crafts ",
         "date": "May 16, 2025",
         "datetime": "2025-05-16",
         "remainingdays": 4,
@@ -87,17 +87,17 @@ const events = [
     },
     {
         "id": 7,
-        "title": "Addis Tech Expo 2025",
-        "description": "Explore the latest in Ethiopian startups, smart technologies, and digital innovation.",
-        "date": "June 12, 2025",
-        "datetime": "2025-06-12",
-        "remainingdays": 30,
-        "address": "Millennium Hall, Bole, Addis Ababa",
-        "price": "250 ETB",
+        "title": "Gaming & Esports Championship",
+        "description": "A competitive gaming event featuring tournaments, meet-ups, and tech showcases.",
+        "date": "May 18, 2025",
+        "datetime": "2025-05-18",
+        "remainingdays": 6,
+        "address": "Century Mall, Addis Ababa",
+        "price": "350 ETB",
         "spots": 300,
-        "spotplus": '',
-        "age": 16,
-        "image": "./img/tech-expo.webp"
+        "spotplus": "",
+        "age": 13,
+        "image": "./img/gaming-championship.webp"
     },
     {
         "id": 8,
