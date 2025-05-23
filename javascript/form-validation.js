@@ -1,4 +1,5 @@
 // Form validation
+
 document.querySelector('#create-account-form').addEventListener('submit', function (event) {
     event.preventDefault();
     if (validateForm()) {
@@ -32,7 +33,7 @@ document.querySelector('#create-account-form').addEventListener('submit', functi
 
         // Back to events page after 10 seconds
         setTimeout(() => {
-            window.location.href = './events.html';
+            window.location.href = '../html/events.html';
         }, 10000);
 
     }
