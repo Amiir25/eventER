@@ -193,5 +193,5 @@ document.querySelector('#book-now').addEventListener('click', function () {
     sessionStorage.setItem('ageColor', ageColor);
 
     // Open the event booking form
-    window.location.href = './book-event.html';
+    window.location.href = '../html/form.html';
 })
