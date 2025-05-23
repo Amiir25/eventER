@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventER - Book</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper flex flex-col h-screen">
+
+        <!-- Create account wrapper -->
+        <div id="create-account-wrapper" class="relative pt-6 h-full">
+
+            <!-- Back arrow -->
+            <a href="./events.html" id="back-arrow" class="absolute top-1 left-1 md:top-5 md:left-10 text-2xl">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <div id="create-account" class="w-full max-w-sm md:max-w-lg max-h-[90%] overflow-y-scroll slide-in
+                    absolute top-1/2 left-1/2 transform -translate-1/2 z-10">
+
+                <!-- Selected event -->
+                <div id="selected-event-wrapper" class="mb-5 text-center text-gray-400">
+                    <div id="selected-event" class="bg-[rgba(0,0,0,0.8)] px-2 py-4">
+                        <p id="selected-event-title" class="font-semibold text-3xl md:text-5xl"></p>
+                        <div class="flex space-x-3 items-center justify-evenly mt-4 text-gray-300">
+                            <p id="selected-event-date"></p>
+                            <p id="selected-event-price"></p>
+                            <p id="selected-event-age" class="font-semibold"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Header -->
+                <div class="mb-4">
+                    <p class="text-2xl md:text-3xl font-bold">Secure Your Spot Today</p>
+                    <p>Just a few details</p>
+                </div>
+
+                <form id="create-account-form"
+                    class="border-l border-r border-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+                    <!-- First Name -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-md font-semibold mb-2" for="firstname">
+                            First Name
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="first-name" type="text" name="first-name" placeholder="Enter your first name">
+                        <p id="first-name-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-md font-semibold mb-2" for="last-name">
+                            Last Name
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                            id="last-name" type="text" name="last-name" placeholder="Enter your last name">
+                        <p id="last-name-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-md font-semibold mb-2" for="email">
+                            Email
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                            id="email" type="email" name="email" placeholder="Enter your email">
+                        <p id="email-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                            Phone Number
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none"
+                            id="phone" type="tel" name="phone-number" placeholder="Enter your phone number">
+                        <p id="phone-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Country -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="country">
+                            Country
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none"
+                            id="country" name="country" value="Ethiopia" disabled>
+                    </div>
+
+                    <!-- City -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="city">
+                            City
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none"
+                            list="city" id="city-input" name="city" placeholder="Select your city">
+                        <datalist id="city">
+                            <option value="Asayta"></option>
+                            <option value="Bahir Dar"></option>
+                            <option value="Addis Ababa"></option>
+                            <option value="Hawassa"></option>
+                            <option value="Jijiga"></option>
+                            <option value="Wolaita Sodo"></option>
+                            <option value="Mekelle"></option>
+                            <option value="Harar"></option>
+                            <option value="Asosa"></option>
+                            <option value="Dire Dawa"></option>
+                            <option value="Gambella"></option>
+                            <option value="Bonga"></option>
+                            <option value="other"></option>
+                        </datalist>
+                        <p id="city-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">
+                            Date of Birth
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none"
+                            id="dob" type="date" name="date-of-birth">
+                        <p id="dob-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">
+                            Gender
+                        </label>
+                        <div class="flex items-center gap-x-3">
+                            <!-- Male -->
+                            <input id="male" name="gender" type="radio" value="male"
+                                class="size-4 rounded-full border border-gray-300 text-indigo-600">
+                            <label for="male" class="text-sm font-medium text-gray-900">Male</label>
+
+                            <!-- Female -->
+                            <input id="female" name="gender" type="radio" value="female"
+                                class="size-4 rounded-full border border-gray-300 text-indigo-600">
+                            <label for="female" class="text-sm font-medium text-gray-900">Female</label>
+                        </div>
+                        <p id="gender-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                            Password
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none"
+                            id="password" type="password" name="password" placeholder="Enter your password">
+                        <p id="password-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="confirm-password">
+                            Confirm Password
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none"
+                            id="confirm-password" type="password" placeholder="Confirm your password">
+                        <p id="confirm-password-error" class="text-red-500 text-xs italic hidden"></p>
+                    </div>
+
+                    <!-- Reminder Method -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">
+                            Reminder Method (Optional)
+                        </label>
+                        <div class="flex items-center space-x-5">
+                            <!-- Email -->
+                            <div class="flex items-center space-x-2">
+                                <input id="emale-reminder" name="reminder-method" type="radio" value="Email"
+                                    class="size-4 rounded-full border border-gray-300 text-indigo-600">
+                                <label for="emale-reminder" class="text-sm font-medium text-gray-900">Email</label>
+                            </div>
+
+                            <!-- SMS -->
+                            <div class="flex items-center space-x-2">
+                                <input id="sms-reminder" name="reminder-method" type="radio" value="SMS"
+                                    class="size-4 rounded-full border border-gray-300 text-indigo-600">
+                                <label for="sms-reminder" class="text-sm font-medium text-gray-900">SMS</label>
+                            </div>
+
+                            <!-- Phone Call -->
+                            <div class="flex items-center space-x-2">
+                                <input id="phone-reminder" name="reminder-method" type="radio" value="Phone call"
+                                    class="size-4 rounded-full border border-gray-300 text-indigo-600">
+                                <label for="phone-reminder" class="text-sm font-medium text-gray-900">Phone call</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="text-center mt-10">
+                        <button
+                            class="text-gray-700font-bold py-2 px-4 border rounded hover:bg-cyan-200 hover:border-cyan-200"
+                            id="submit-btn" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div><!-- create-account -->
+
+            <!-- User Details -->
+            <div id="user-detail-wrapper" class="w-full max-w-sm md:max-w-lg max-h[90%]
+                    absolute top-1/2 left-1/2 transform -translate-1/2 opacity-0 z-0">
+                <p class="text-gray-900 bg-green-400 mb-3 p-4 rounded-full">
+                    Your data is submitted successfully!
+                </p>
+                <div id="user-detail" class="border-l border-r border-gray-300 rounded px-8 pt-6 pb-8 mb-4">
+                    <p class="mb-2">
+                        <span class="font-semibold">Full Name</span>
+                        <span id="user-full-name" class="ml-2"></span>
+                    </p>
+                    <p class="mb-2">
+                        <span class="font-semibold">Email</span>
+                        <span id="user-email" class="ml-2"></span>
+                    </p>
+                    <p class="mb-2">
+                        <span class="font-semibold">Phone</span>
+                        <span id="user-phone" class="ml-2"></span>
+                    </p>
+                    <p class="mb-2">
+                        <span class="font-semibold">Address</span>
+                        <span id="user-address" class="ml-2"></span>
+                    </p>
+                    <p class="mb-2">
+                        <span class="font-semibold">Age</span>
+                        <span id="user-age" class="ml-2"></span>
+                    </p>
+                    <p class="mb-2">
+                        <span class="font-semibold">Gender</span>
+                        <span id="user-gender" class="ml-2"></span>
+                    </p>
+                    <p class="mb-2">
+                        <span id="reminder" class="font-semibold text-gray-500"></span>
+                    </p>
+                </div>
+            </div> <!-- user-detail-wrapper -->
+        </div> <!-- create-account-wrapper -->
+
+        <!-- Footer Message -->
+        <p class="text-center text-gray-700 text-xs absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            &copy;2025 eventER. All rights reserved.
+        </p>
+    </div> <!-- wrapper -->
+
+
+
+    <script src="book-event.js"></script>
+    <script src="list-of-events.js"></script>
+    <script src="form-validation.js"></script>
+</body>
+
+</html>
