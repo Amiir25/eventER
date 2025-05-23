@@ -13,7 +13,7 @@ const events = [
         "spots": 300,
         "spotplus": '',
         "age": 16,
-        "image": "./img/tech-expo.webp"
+        "image": "../img/tech-expo.webp"
     },
     {
         "id": 2,
@@ -27,7 +27,7 @@ const events = [
         "spots": 150,
         "spotplus": "(20 to pitch)",
         "age": 18,
-        "image": "./img/startup-competition.webp"
+        "image": "../img/startup-competition.webp"
     },
     {
         "id": 3,
@@ -41,7 +41,7 @@ const events = [
         "spots": 20,
         "spotplus": '',
         "age": 4,
-        "image": "./img/children-puppet-show.webp"
+        "image": "../img/children-puppet-show.webp"
     },
     {
         "id": 4,
@@ -55,7 +55,7 @@ const events = [
         "spots": 120,
         "spotplus": '',
         "age": 18,
-        "image": "./img/green-cities-dialog.webp"
+        "image": "../img/green-cities-dialog.webp"
     },
     {
         "id": 5,
@@ -69,7 +69,7 @@ const events = [
         "spots": 3,
         "spotplus": '',
         "age": 7,
-        "image": "./img/coding-for-kids.webp"
+        "image": "../img/coding-for-kids.webp"
     },
     {
         "id": 6,
@@ -83,7 +83,7 @@ const events = [
         "spots": 30,
         "spotplus": "",
         "age": 14,
-        "image": "./img/home-decore.webp"
+        "image": "../img/home-decore.webp"
     },
     {
         "id": 7,
@@ -97,7 +97,7 @@ const events = [
         "spots": 300,
         "spotplus": "",
         "age": 13,
-        "image": "./img/gaming-championship.webp"
+        "image": "../img/gaming-championship.webp"
     },
     {
         "id": 8,
@@ -111,7 +111,7 @@ const events = [
         "spots": 60,
         "spotplus": '',
         "age": 16,
-        "image": "./img/agricultural-innovation.webp"
+        "image": "../img/agricultural-innovation.webp"
     },
     {
         "id": 9,
@@ -125,7 +125,7 @@ const events = [
         "spots": 100,
         "spotplus": '',
         "age": 18,
-        "image": "./img/mental-health-seminar.webp"
+        "image": "../img/mental-health-seminar.webp"
     },
     {
         "id": 10,
@@ -139,7 +139,7 @@ const events = [
         "spots": 200,
         "spotplus": '',
         "age": 18,
-        "image": "./img/women-business-forum.webp"
+        "image": "../img/women-business-forum.webp"
     },
     {
         "id": 11,
@@ -153,7 +153,7 @@ const events = [
         "spots": 40,
         "spotplus": '',
         "age": 10,
-        "image": "./img/lalibela-heritage-workshop.webp"
+        "image": "../img/lalibela-heritage-workshop.webp"
     },
     {
         "id": 12,
@@ -167,7 +167,7 @@ const events = [
         "spots": 7,
         "spotplus": '',
         "age": 0,
-        "image": "./img/coffe-ceremony.webp"
+        "image": "../img/coffe-ceremony.webp"
     },
     {
         "id": 13,
@@ -181,7 +181,7 @@ const events = [
         "spots": 300,
         "spotplus": '',
         "age": 18,
-        "image": "./img/civil-service-reform.webp"
+        "image": "../img/civil-service-reform.webp"
     },
     {
         "id": 14,
@@ -195,7 +195,7 @@ const events = [
         "spots": 15,
         "spotplus": "",
         "age": 12,
-        "image": "./img/ethiopan-food-cooking.webp"
+        "image": "../img/ethiopan-food-cooking.webp"
     },
     {
         "id": 15,
@@ -209,7 +209,7 @@ const events = [
         "spots": 250,
         "spotplus": "",
         "age": 0,
-        "image": "./img/public-health.webp"
+        "image": "../img/public-health.webp"
     },
     {
         "id": 16,
@@ -223,7 +223,7 @@ const events = [
         "spots": 100,
         "spotplus": "",
         "age": 18,
-        "image": "./img/short-films.webp"
+        "image": "../img/short-films.webp"
     },
     {
         "id": 17,
@@ -237,7 +237,7 @@ const events = [
         "spots": 80,
         "spotplus": "",
         "age": 4,
-        "image": "./img/children-art.webp"
+        "image": "../img/children-art.webp"
     },
     {
         "id": 18,
@@ -251,7 +251,7 @@ const events = [
         "spots": 120,
         "spotplus": "",
         "age": 16,
-        "image": "./img/comedy-night.webp"
+        "image": "../img/comedy-night.webp"
     },
     {
         "id": 19,
@@ -265,7 +265,7 @@ const events = [
         "spots": 100,
         "spotplus": "",
         "age": 16,
-        "image": "./img/future-of-ai.webp"
+        "image": "../img/future-of-ai.webp"
     },
     {
         "id": 20,
@@ -279,7 +279,7 @@ const events = [
         "spots": 50,
         "spotplus": "",
         "age": 10,
-        "image": "./img/chess-competition.webp"
+        "image": "../img/chess-competition.webp"
     },
     {
         "id": 21,
@@ -293,7 +293,7 @@ const events = [
         "spots": 100,
         "spotplus": '',
         "age": 18,
-        "image": "./img/cultural-heritage-forum.webp"
+        "image": "../img/cultural-heritage-forum.webp"
     },
     {
         "id": 22,
@@ -307,7 +307,7 @@ const events = [
         "spots": 60,
         "spotplus": "",
         "age": 13,
-        "image": "./img/street-photography.webp"
+        "image": "../img/street-photography.webp"
     },
     {
         "id": 23,
@@ -321,7 +321,7 @@ const events = [
         "spots": 150,
         "spotplus": "",
         "age": 12,
-        "image": "./img/health-and-wellness.webp"
+        "image": "../img/health-and-wellness.webp"
     },
     {
         "id": 24,
@@ -335,7 +335,7 @@ const events = [
         "spots": 40,
         "spotplus": "",
         "age": 10,
-        "image": "./img/entoto-mountain.webp"
+        "image": "../img/entoto-mountain.webp"
     },
     {
         "id": 25,
@@ -349,7 +349,7 @@ const events = [
         "spots": 100,
         "spotplus": "",
         "age": 16,
-        "image": "./img/ethiopian-space-science.webp"
+        "image": "../img/ethiopian-space-science.webp"
     },
     {
         "id": 26,
@@ -363,7 +363,7 @@ const events = [
         "spots": 10,
         "spotplus": '',
         "age": 21,
-        "image": "./img/parenting-workshop.webp"
+        "image": "../img/parenting-workshop.webp"
     },
 ];
 
