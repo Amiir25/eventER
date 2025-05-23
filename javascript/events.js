@@ -184,7 +184,7 @@ function closeEventDetail() {
 }
 closeEventDetail();
 
-
+// Book now button
 document.querySelector('#book-now').addEventListener('click', function () {
     // Save the Id of the selected event
     sessionStorage.setItem('selectedEventId', selectedEventId);
