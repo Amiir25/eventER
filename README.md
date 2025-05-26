@@ -33,8 +33,8 @@
 - **JavaScript (Vanilla)** – form validation, event logic, DOM manipulation
 - **CSS (minor)** – transitions and animations
 
----
-
 ## Responsive Design
 
 The layout adapts seamlessly across mobile, tablet, and desktop devices using Tailwind's mobile-first utility classes.
+
+[View the live demo](https://amiir25.github.io/eventER/)
